@@ -1,0 +1,41 @@
+.mainContainer {
+  display: flex;
+  flex: 10;
+  /* border: 2px solid black; */
+  margin: 5px;
+}
+
+.mainContainer--Left {
+  /* border: 2px solid black; */
+  display: flex;
+  flex: 8;
+  margin: 5px;
+}
+
+.mainContainer--Right {
+  border: 2px solid black;
+  background-color: #BB3311;
+  flex: 3;
+  margin: 5px;
+}
+
+.cardContainer--park {
+  border: 2px solid black;
+  background-color: slategray;
+  flex: 1;
+  margin: 5px;
+}
+
+.cardContainer--attraction {
+  border: 2px solid black;
+  background-color: slategray;
+  flex: 1;
+  margin: 5px;
+}
+
+.cardContainer--eatery {
+  border: 2px solid black;
+  background-color: slategray;
+  flex: 1;
+  margin: 5px;
+}

@@ -3,7 +3,7 @@ import { eateriesToHtmlConverter } from "./EateriesHTMLConvertor.js";
 
 
 const contentTarget = document.querySelector('.eateryCard')
-const eventHub = document.querySelector('.container')
+const eventHub = document.querySelector('.eventHub')
 
 
 eventHub.addEventListener('eaterySelected', (eaterySelectedEvent) => {
