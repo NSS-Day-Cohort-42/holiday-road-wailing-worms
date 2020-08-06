@@ -1,0 +1,27 @@
+.headerContainer {
+  display: flex;
+  flex: 4;
+  justify-content: space-between;
+  border: 2px solid black;
+  background-color: #584F23;
+  margin: 5px;
+  height: 100%;
+}
+
+.headerContainer--Logo {
+  /* border: 2px solid black; */
+  border-radius: 2.5rem;
+  flex: 2;
+  width: 20px;
+  margin: 5px;
+}
+
+.headerContainer--Heading {
+  /* border: 2px solid black; */
+  color: white;
+  text-align: center;
+  align-self: center;
+  font-size: 5rem;
+  flex: 10;
+  margin: 5px;
+}
