@@ -1,6 +1,5 @@
 export default {
 	graphhopperKey: "",
-	npsKey: "vniJVYwidFSxLAZ7pGhHnp1eG7LmPx5zpYAHEd5a",
-	weatherKey: "8b29a4bca59654d89101420102680ded"
+	npsKey: "ptVl4gT1bHNoBs9DKF8soKDBFx9K6xhydJ5OVj9D",
+	weatherKey: "6f9750b61cd496691f0a3fc727492990"
 }
-
