@@ -12,7 +12,7 @@ export const getEateries =  () => {
             .then(response => response.json())
             .then(parsedEateries => {
                  eateries = parsedEateries
-                 console.log(eateries)
+                 
             })
             
         }
