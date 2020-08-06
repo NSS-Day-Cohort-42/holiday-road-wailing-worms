@@ -7,8 +7,8 @@ export const getWeather = () => {
   .then(res => res.json())
   .then(
     parsedWeather => {
-      weatherArray = parsedWeather.list
-      // console.log(weatherArray)
+      weatherArray = parsedWeather.daily
+      console.log(weatherArray)
     }
   )
 }

@@ -1,6 +1,5 @@
 export const weatherHTMLRep = (weatherObj) => {
-  return
-  `
-    ${weatherObj.lat}
+  return`
+    ${weatherObj[0].dt}
   `
 }

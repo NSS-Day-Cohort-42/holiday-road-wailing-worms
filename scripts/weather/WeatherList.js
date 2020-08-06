@@ -4,10 +4,8 @@ import { weatherHTMLRep } from "./WeatherHTMLConvertor.js";
 const contentTarget = document.querySelector(".weatherContainer")
 
 const render = (weatherArr) => {
-  let weatherString = "8"
   
-  weatherString += weatherHTMLRep(weatherArr)
-  contentTarget.innerHTML = weatherString
+  contentTarget.innerHTML = weatherHTMLRep(weatherArr)
 
 }
 
