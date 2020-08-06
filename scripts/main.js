@@ -1,3 +1,3 @@
-import { getWeather } from "./weather/WeatherProvider.js";
+import { weatherList } from "./weather/WeatherList.js";
 
-getWeather()
+weatherList()
