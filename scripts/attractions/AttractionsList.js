@@ -1,39 +1,20 @@
-import { getAttractions, useAttractions, useAttractionById } from "./AttractionProvider.js";
+import { useAttractions } from "./AttractionProvider.js";
 
-const contentTarget = document.querySelector(".attractionDropdown")
+const contentTarget = document.querySelector(".attractionCard")
 const eventHub = document.querySelector(".eventHub")
 
-eventHub.addEventListener("change", (event) => {
-    if(event.target.id === "attractionSelect"){
-        const attractionId = event.target.value
-        const attractionName = useAttractionById(attractionId).name
-        const customEvent = new CustomEvent("attractionSelected", {
-            detail: {
-                attractionId: attractionId,
-                attractionName: attractionName
-            }
-        })
-        eventHub.dispatchEvent(customEvent)
-        console.log("custom event triggered", customEvent)
-    }
+eventHub.addEventListener("attractionSelected", event => {
+    const attractionId = event.detail.attractionId
+    const attractions = useAttractions()
+    const foundAttraction = attractions.find(attraction => attraction.id === parseInt(attractionId))
+    render(foundAttraction)
 })
 
-export const attractionSelect = () => {
-    getAttractions()
-        .then(() => {
-            const attractions = useAttractions()
-            render(attractions)
-        })
-}
-
-const render = (attractions) => {
-    contentTarget.innerHTML += `
-    <select class="dropdown dropdown--attraction" id="attractionSelect">
-        <option value="0">Select an attraction...</option>
-        ${
-            attractions.map(attraction => {
-                return `<option value="${attraction.id}">${attraction.name}</option>`
-            }).join("")
-        }
-    </select>`
+const render = (attractionObj) => {
+    contentTarget.innerHTML = `
+        <div class="attractionDetail">
+            <h3>${attractionObj.name}</h3>
+            <div>${attractionObj.city}, ${attractionObj.state}</div>
+            <button class="attractionDetailButton" id="attraction-detail--${attractionObj.id}">Details</button>
+    `
 }
