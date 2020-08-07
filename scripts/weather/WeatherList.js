@@ -8,6 +8,7 @@ const lat = "36.1627"
 const long = "-86.7816"
 
 
+
 const render = (weatherArr) => {
   let weatherHTMLString = ""
 
