@@ -12,7 +12,6 @@ export const getWeather = (lat, long) => {
   .then(
     parsedWeather => {
       weatherArray = parsedWeather.daily
-      console.log(weatherArray)
     }
   )
 }

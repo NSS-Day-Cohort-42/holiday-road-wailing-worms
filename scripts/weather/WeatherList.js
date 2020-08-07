@@ -18,7 +18,6 @@ const render = (weatherArr) => {
     
   }
   
-  console.log(weatherHTMLString)
   contentTarget.innerHTML = `
   <div class="weatherHeading">5 day forecast for ${name}</div>
   <div class="weatherString">${weatherHTMLString}</div>
