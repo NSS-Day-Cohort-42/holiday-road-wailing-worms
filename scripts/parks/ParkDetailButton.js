@@ -11,8 +11,15 @@ eventHub.addEventListener("click", clickEvent => {
         const detailEvent = new CustomEvent("showParkDetailsClicked")
         eventHub.dispatchEvent(detailEvent)   
     }
+    if (clickEvent.target.id === "parkDetailDialog") {
+        closeModalDialog()
+    }
 })
 
 export const ShowParkDetailsButton = () => {
     contentTarget.innerHTML = "<button id= 'showParkDetails'>Show Park Details</button>"
+}
+
+const closeModalDialog = () => { 
+    document.getElementById("parkDetailDialog").close();
 }

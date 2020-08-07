@@ -7,5 +7,4 @@ import "../scripts/parks/ParkDetailButton.js"
 
 parkSelect()
 
-
 weatherList()
