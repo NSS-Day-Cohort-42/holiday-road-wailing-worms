@@ -4,8 +4,8 @@ import { weatherHTMLRep } from "./WeatherHTMLConvertor.js";
 const contentTarget = document.querySelector(".weatherContainer")
 // just need to change these variables below to coincide with the data travis extracts from api
 const name = "selected park var"
-const lat = "44.30777545"
-const long = "-68.30063316"
+const lat = "36.1627"
+const long = "-86.7816"
 
 
 const render = (weatherArr) => {
