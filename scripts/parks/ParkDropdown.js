@@ -4,14 +4,15 @@
  */
 import { useParks, getAllParkData } from "./ParkProvider.js"
 
-const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".park-dropdown")
+const eventHub = document.querySelector(".eventHub")
+const contentTarget = document.querySelector(".parkDropdown")
 
+
+//event listener that is "listening" for a browser-based Change event on the id of parkselect. Which is where the dropdown is at.
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "parkSelect") {
         // Get the name of the selected selected Park
         
-        console.log("ParkDropdown: User chose a park option")
         const selectedPark = changeEvent.target.value
 
         // Define a custom event
@@ -20,12 +21,12 @@ eventHub.addEventListener("change", changeEvent => {
                 parkCode: selectedPark
             }
         })
-        console.log("ParkDropdown: Dispatch custom parkSelected event")
         // Dispatch event to event hub
         eventHub.dispatchEvent(parkEvent)
     }
 })
 
+//Dropdown HTML Render
 const render = parksCollection => {
     contentTarget.innerHTML = `
         <select class="dropdown" id="parkSelect">
@@ -41,11 +42,10 @@ const render = parksCollection => {
     `
 }
 
+//function to trigger API call and render of the dropdown to DOM
 export const parkSelect = () => {
     getAllParkData().then(() => {
-        // Get all officers from application state
         const nationalParks = useParks()
-        
         render(nationalParks)
     })
 }
