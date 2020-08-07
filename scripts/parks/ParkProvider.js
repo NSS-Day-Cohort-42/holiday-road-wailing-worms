@@ -16,7 +16,6 @@ export const getAllParkData = () => {
         })
         .then(nationalParksOnly => {
             parks = nationalParksOnly
-            console.table(parks)
         })  
 }
 

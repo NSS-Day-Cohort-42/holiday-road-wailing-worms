@@ -1,6 +1,5 @@
 
-
-const parkDetails = {}
+const eventHub = document.querySelector(".container")
 
 /* This function will fetch new data from the API very quickly since we are searching only for a parkCode
 and we are using a search query of National Park */
@@ -15,3 +14,22 @@ and we are using a search query of National Park */
 //         )
 //     }
     
+
+
+// On the event hub, listen for a "change" event.
+eventHub.addEventListener("change", (event) => {
+    
+    // Only do this if the `parkSelect` element was changed
+    if (event.target.id === "parkSelect") {
+        console.log("custom event recognized")
+        // Create custom event. Provide an appropriate name.
+        const parkEvent = new CustomEvent("parkSelected", {
+            detail: {
+                parkCode: selectedPark
+            }
+        })
+
+        // Dispatch to event hub
+        eventHub.dispatchEvent(parkEvent)
+    }
+})

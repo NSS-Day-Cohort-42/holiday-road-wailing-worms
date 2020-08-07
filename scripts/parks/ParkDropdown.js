@@ -15,14 +15,14 @@ eventHub.addEventListener("change", changeEvent => {
         const selectedPark = changeEvent.target.value
 
         // Define a custom event
-        const customEvent = new CustomEvent("parkSelected", {
+        const parkEvent = new CustomEvent("parkSelected", {
             detail: {
-                officer: selectedPark
+                parkCode: selectedPark
             }
         })
         console.log("ParkDropdown: Dispatch custom parkSelected event")
         // Dispatch event to event hub
-        eventHub.dispatchEvent(customEvent)
+        eventHub.dispatchEvent(parkEvent)
     }
 })
 
