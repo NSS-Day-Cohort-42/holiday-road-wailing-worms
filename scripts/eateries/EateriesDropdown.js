@@ -18,9 +18,9 @@ eventHub.addEventListener("change", (changeEvent) => {
 export const eateriesRender = (eateriesCollection) => {
     contentTarget.innerHTML = `<select>
     <option value="0"> please select an eatery</option>
-    ${
+    ${                                          
         eateriesCollection.map(eateriesObj => `<option value="${eateriesObj.id}"> ${eateriesObj.businessName}</option>` ).join('')
-        }    
+        }                                                       
     </select>`
 }
 

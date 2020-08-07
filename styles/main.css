@@ -1,10 +1,10 @@
 @import "./header.css";
 @import "./middle.css";
 @import "./footer.css";
-
+@import './eateries.css';
 
 body {
-  background-color: #F0EBD8;
+  background-color: #F0EBD8
 }
 
 .eventHub {
