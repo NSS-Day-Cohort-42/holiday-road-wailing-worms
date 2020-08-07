@@ -1,0 +1,15 @@
+.saveTripContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  /* font-size: 1vw; */
+}
+
+.enterName {
+  font-size: 100%;
+} 
+
+.saveButton {
+  font-size: 100%;
+}
