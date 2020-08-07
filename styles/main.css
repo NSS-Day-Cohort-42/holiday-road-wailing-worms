@@ -1,12 +1,9 @@
 @import "./header.css";
 @import "./middle.css";
 @import "./footer.css";
-<<<<<<< HEAD
-@import './eateries.css';
-=======
 @import "./weather.css";
+@import './eateries.css';
 
->>>>>>> 7bbb11dd32b87e7659bc5418f07a2be5de869cae
 
 body {
   background-color: #F0EBD8

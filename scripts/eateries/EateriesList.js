@@ -3,7 +3,7 @@ import { eateriesToHtmlConverter } from "./EateriesHTMLConvertor.js";
 import { eateryModal } from './EateriesDetailButton.js'
 
 
-const contentTarget = document.querySelector('.eateryCard')
+const contentTarget = document.querySelector(".eateryCard")
 const eventHub = document.querySelector('.eventHub')
 const modalTarget = document.querySelector('.eateryCard')
 
