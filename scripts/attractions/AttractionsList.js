@@ -1,7 +1,22 @@
-import { getAttractions, useAttractions } from "./AttractionProvider.js";
+import { getAttractions, useAttractions, useAttractionById } from "./AttractionProvider.js";
 
 const contentTarget = document.querySelector(".attractionDropdown")
 const eventHub = document.querySelector(".eventHub")
+
+eventHub.addEventListener("change", (event) => {
+    if(event.target.id === "attractionSelect"){
+        const attractionId = event.target.value
+        const attractionName = useAttractionById(attractionId).name
+        const customEvent = new CustomEvent("attractionSelected", {
+            detail: {
+                attractionId: attractionId,
+                attractionName: attractionName
+            }
+        })
+        eventHub.dispatchEvent(customEvent)
+        console.log("custom event triggered", customEvent)
+    }
+})
 
 export const attractionSelect = () => {
     getAttractions()
