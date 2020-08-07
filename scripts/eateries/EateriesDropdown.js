@@ -4,19 +4,20 @@ const contentTarget = document.querySelector('.eateryDropdown')
 const eventHub = document.querySelector(".eventHub")
 
 eventHub.addEventListener("change", (changeEvent) => {
-
+     if (changeEvent.target.id === 'eateries') {
   
     const eateryEvent = new CustomEvent("eaterySelected", {
         detail: {
-            eateryid: changeEvent.target.value
+            eateryId: changeEvent.target.value
         }
     })
 
     eventHub.dispatchEvent(eateryEvent)
+    }
 })
 
 export const eateriesRender = (eateriesCollection) => {
-    contentTarget.innerHTML = `<select>
+    contentTarget.innerHTML = `<select id="eateries">
     <option value="0"> please select an eatery</option>
     ${                                          
         eateriesCollection.map(eateriesObj => `<option value="${eateriesObj.id}"> ${eateriesObj.businessName}</option>` ).join('')
