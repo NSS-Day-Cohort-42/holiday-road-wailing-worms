@@ -1,39 +1,33 @@
 //import settings from "../Settings.js"
 
+// The below array will store the JSON objects pulled via getALLParkData().
 let parks = []
 
-
+/* This Function pulls from the parks.json file. The file is pre-populated with data. 
+I did it this way so that we could do a background update if need be. */
+/* waits till the API call is done and then runs a filter on the designation property.
+this ensures we only return National Parks and not National Historic Parks, etc. */
 export const getAllParkData = () => {
     return fetch('http://localhost:8088/parks')
     .then(response => response.json())
     .then(parsedParkData => {
-        parks = parsedParkData
-        console.log(parks)
-    })
+        const filteredNationalParks = filterByDesignationProperty(parsedParkData, "National Park")
+            return filteredNationalParks
+        })
+        .then(nationalParksOnly => {
+            parks = nationalParksOnly
+            console.table(parks)
+        })  
 }
 
+// creates a copy of the parks array
 export const useParks = () => {
     return parks.slice()
 }
 
-
-
-export const getParks = () => {
-return fetch(`https://developer.nps.gov/api/v1/parks?parkCode=acad&q=National%20Park&api_key=vniJVYwidFSxLAZ7pGhHnp1eG7LmPx5zpYAHEd5a`)
-        //convert response to JSON
-        .then (response => response.json())
-        //Makes date equal to empty array on line 1
-        .then (parsedParks => {
-            //console.table(parsedCriminals)
-            parks = parsedParks
-        }
-    )
-    
-    
+const filterByDesignationProperty = (array, value) => {
+    return array.filter(
+        parkType => {
+            return parkType.designation === value
+        })
 }
-
-// parks.filter("parkDesigantion")
-//returns the 60ish national parks
-//map.fullName
-
-
