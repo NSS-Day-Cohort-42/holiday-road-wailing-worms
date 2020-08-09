@@ -5,7 +5,6 @@ const contentTarget = document.querySelector(".parkCard")
 
 // On the event hub, listen for a "change" event.
 eventHub.addEventListener("parkSelected", () => {
-    ShowParkDetailsButton()
     getParkCard()
 })
 
@@ -38,8 +37,8 @@ export const getParkCard = () => {
             return nationalParkCode === selectedPark.parkCode
         })        
         
-        console.log(matchedPark)
         showParkCard(matchedPark)    
+        ShowParkDetailsButton()
     }
     
     export const showParkCard = (selectedParkObject) => {

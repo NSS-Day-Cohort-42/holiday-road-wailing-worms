@@ -1,12 +1,15 @@
 export const ParkDetailTMLConverter = (parkObject) => {
+    let parkFees = ""
     if (parkObject.entranceFees.length > 0) {
-      parkObject.entranceFees.forEach((fee) => {
-        fee.cost;
-        fee.title; 
-      });
+    const parkFeesInfo =  parkObject.entranceFees.map((fee) => {
+        return `<div>${fee.title}</div>
+                <div>${fee.cost}</div>`
+      }).join("");
+      parkFees += parkFeesInfo
     }
   return `
     <section class="modalContainer--park">
+    ${ parkFees }
     <h5>Address</h5>
     <div class= "park--addressLocation">${parkObject.addresses[0].line2}</div>
     <div class= "park--streetAddress">${parkObject.addresses[0].line1}</div>
@@ -18,3 +21,4 @@ export const ParkDetailTMLConverter = (parkObject) => {
     </section>
     `;
 };
+
