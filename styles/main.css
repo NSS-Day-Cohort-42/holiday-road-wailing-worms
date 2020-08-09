@@ -3,10 +3,11 @@
 @import "./footer.css";
 @import "./weather.css";
 @import "./save.css";
+@import './eateries.css';
 
 
 body {
-  background-color: #F0EBD8;
+  background-color: #F0EBD8
 }
 
 .eventHub {
