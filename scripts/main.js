@@ -7,8 +7,8 @@ import "./weather/WeatherList.js"
 import { render, renderItinObject } from "./SaveItineraryList.js";
 
 parkSelect()
+eateriesSelect();
 render()
 // renderItinObject()
-eateriesSelect();
-parkSelect()
+
 
