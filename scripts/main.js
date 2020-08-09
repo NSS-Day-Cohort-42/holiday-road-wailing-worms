@@ -1,11 +1,11 @@
-import { weatherList } from "./weather/WeatherList.js";
-import { render, renderItinObject } from "./SaveItineraryList.js";
 import "./parks/ParkList.js"
 import { parkSelect } from "./parks/ParkDropdown.js"
 import "../scripts/parks/ParkDetailButton.js"
+import "./weather/WeatherList.js"
+// import { render, renderItinObject } from "./SaveItineraryList.js";
 
 parkSelect()
-weatherList()
-render()
-renderItinObject()
+// weatherList()
+// render()
+// renderItinObject()
 
