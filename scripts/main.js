@@ -5,7 +5,6 @@ import "./weather/WeatherList.js"
 // import { render, renderItinObject } from "./SaveItineraryList.js";
 
 parkSelect()
-// weatherList()
 // render()
 // renderItinObject()
 
