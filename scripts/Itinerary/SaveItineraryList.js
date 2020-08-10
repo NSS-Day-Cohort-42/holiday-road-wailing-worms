@@ -1,6 +1,7 @@
 import { saveTripHTML } from "./SaveIteneraryButton.js";
-import { useParks } from "./parks/ParkProvider.js";
-import { useEateries } from "./eateries/EateryProvider.js";
+import { useParks } from "../parks/ParkProvider.js";
+import { useEateries } from "../eateries/EateryProvider.js";
+// import { useAttractions } from "./attractions/AttractionProvider.js";
 
 const eventHub = document.querySelector(".eventHub")
 const contentTarget = document.querySelector(".saveTripContainer")
@@ -16,8 +17,8 @@ eventHub.addEventListener("click", event => {
     // creating a variable to target the .value of a particular class on the DOM
     const selectedParkCode = document.querySelector("#parkSelect").value
     const selectedEateryId = document.querySelector("#eateries").value
-    
-
+    // const selectedAttractionId = document.querySelector("#attractions").value
+    console.log(selectedEateryId)
     const foundParkObject = useParks().find(
       (park) => {
         return selectedParkCode === park.parkCode
@@ -26,10 +27,22 @@ eventHub.addEventListener("click", event => {
       
     const foundEateryObject = useEateries().find(
       (eatery) => {
-        return selectedEateryId === eatery.businessName
+        return parseInt(selectedEateryId) === eatery.id
       })
-    }
-  })
+    console.log(selectedEateryId) 
+     
+    console.log(foundEateryObject)
+    // const foundAttractionObject = useAttractions().find(
+    // (attraction) => {
+    //   return selectedAttractionId === attraction.businessName
+    // })
+      
+    
+    
+  }
+      
+})
+
 
 
 
