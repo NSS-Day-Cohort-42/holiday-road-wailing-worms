@@ -10,8 +10,7 @@ export const ParkDetailTMLConverter = (parkObject) => {
   if (parkObject.entranceFees.length > 0) {
     const parkFeesInfo = parkObject.entranceFees
       .map((fee) => {
-        return `<div><b>Description:</b> ${fee.title}</div>
-                <div><b>Cost (USD)</b> $${Math.round(fee.cost)}</div>`;
+        return `<div> ${fee.title}</div> <div>$${Math.round(fee.cost)}</div>`;
       })
       .join("");
     parkFees += parkFeesInfo;
@@ -26,20 +25,34 @@ export const ParkDetailTMLConverter = (parkObject) => {
       .join("");
     parkOperatingHours += parkHoursInfo;
   }
-  return `
-    <section class="modalContainer--park">
-    <h5>Address</h5>
-    <div class= "park--addressLocation">${parkObject.addresses[0].line2}</div>
-    <div class= "park--streetAddress">${parkObject.addresses[0].line1}</div>
-    <div class= "park--cityAddress">${parkObject.addresses[0].city}</div>
-    <div class= "park--state">${parkObject.addresses[0].stateCode}</div>
-    <div class= "park--latitude">${parkObject.latitude}</div>
-    <div class= "park--longitude">${parkObject.longitude}</div>
-    <div class= "park--phone">${parkObject.contacts.phoneNumbers[0].phoneNumber}</div>      
-    <h5>Fees</h5>
-    ${parkFees}
-    <h5>Operating Hours</h5>
-    ${parkOperatingHours}
-    </section>
-    `;
+  let parkPhoneNumber = parkObject.contacts.phoneNumbers[0].phoneNumber
+  let formatPhoneNumber = (parkPhoneNumber) => {
+    //Filter only numbers from the input
+    let cleaned = ('' + parkPhoneNumber).replace(/\D/g, '');
+    
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+    };
+  
+    return null
+  };
+
+  console.log(formatPhoneNumber)
+  return `<section class="modalContainer--park">
+<h3><b>Address</b></h3>
+<div class= "park--addressLocation">${parkObject.addresses[0].line2}</div>
+<div class= "park--streetAddress">${parkObject.addresses[0].line1}</div>
+<div class= "park--cityAddress">${parkObject.addresses[0].city}</div>
+<div class= "park--state">${parkObject.addresses[0].stateCode}</div>
+<div class= "park--latitude">${parkObject.latitude}</div>
+<div class= "park--longitude">${parkObject.longitude}</div>
+<div class= "park--phone">${parkObject.contacts.phoneNumbers[0].phoneNumber}</div>      
+<h3><b>Fees</b></h3>
+${parkFees}
+<h3><b>Operating Hours</b></h3>
+${parkOperatingHours}
+</section>`;
 };

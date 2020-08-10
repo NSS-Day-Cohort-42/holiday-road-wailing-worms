@@ -16,8 +16,9 @@ eventHub.addEventListener("click", clickEvent => {
         const detailEvent = new CustomEvent("showParkDetailsClicked")
         eventHub.dispatchEvent(detailEvent)   
     }
-    if (clickEvent.target.id === "parkDetailDialog") {
-        closeModalDialog()
+    if (clickEvent.target.id === "close") {
+        const dialog = event.target.parentNode;
+    dialog.close()
     }
 })
 
@@ -26,10 +27,6 @@ export const ShowParkDetailsButton = () => {
     contentTarget.innerHTML += `<button id= 'showParkDetails'>Show Park Details</button>`
 }
 
-//This will close the the modal when you click on anything that isn't in the parkDetailsDialog class.
-const closeModalDialog = () => { 
-    document.getElementById("parkDetailDialog").close();
-}
 
 /* This function finds the park code that was established in the dropdown and then declares a value of parksArray for the parks data that was imported on line 2.
 Using the find method, the park code is matched to the one that is in each JSON object in the array. The return value of that function is passed into the the showParkCard function.
