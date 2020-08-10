@@ -1,15 +1,28 @@
 export const ParkDetailTMLConverter = (parkObject) => {
-    let parkFees = ""
-    if (parkObject.entranceFees.length > 0) {
-    const parkFeesInfo =  parkObject.entranceFees.map((fee) => {
+  let parkFees = "";
+  if (parkObject.entranceFees.length > 0) {
+    const parkFeesInfo = parkObject.entranceFees
+      .map((fee) => {
         return `<div>${fee.title}</div>
-                <div>${fee.cost}</div>`
-      }).join("");
-      parkFees += parkFeesInfo
-    }
+                <div>${Math.round(fee.cost)}</div>`;
+      })
+      .join("");
+    parkFees += parkFeesInfo;
+  }
+
+  let parkOperatingHours = "";
+  if (parkObject.operatingHours.length > 0) {
+    const parkHoursInfo = parkObject.operatingHours
+      .map((hours) => {
+        return `<div>${hours.description}</div>`;
+      })
+      .join("");
+    parkOperatingHours += parkHoursInfo;
+  }
   return `
     <section class="modalContainer--park">
-    ${ parkFees }
+    ${parkFees}
+    ${parkOperatingHours}
     <h5>Address</h5>
     <div class= "park--addressLocation">${parkObject.addresses[0].line2}</div>
     <div class= "park--streetAddress">${parkObject.addresses[0].line1}</div>
@@ -21,4 +34,3 @@ export const ParkDetailTMLConverter = (parkObject) => {
     </section>
     `;
 };
-
