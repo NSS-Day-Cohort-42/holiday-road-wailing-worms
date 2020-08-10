@@ -38,7 +38,7 @@ const render = (attractions) => {
         <option value="0">Select an attraction...</option>
         ${
             attractions.map(attraction => {
-                return `<option value="${attraction.id}">${attraction.name}</option>`
+                return `<option value="${ attraction.id }">${ attraction.name }</option>`
             }).join("")
         }
     </select>`

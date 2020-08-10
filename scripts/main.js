@@ -13,5 +13,5 @@ eateriesSelect()
 render()
 // renderItinObject()
 
-// Entry point for attractions
+// Entry point for attractions which is called on AttractionsDropdown.js
 attractionSelect()
