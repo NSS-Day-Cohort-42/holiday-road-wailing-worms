@@ -1,10 +1,20 @@
 import { saveTripHTML } from "./SaveIteneraryButton.js";
 
+const eventHub = document.querySelector(".eventHub")
 const contentTarget = document.querySelector(".saveTripContainer")
-const selectedPark = 1
-const selectedEatery = 1
-const selectedAttraction = 1
-let nameEntered =  0
+let selectedPark = 0
+let selectedEatery = 1
+let selectedAttraction = 1
+let nameEntered =  1
+
+eventHub.addEventListener("parkSelected", () => {
+  const selectedPark = document.querySelector("#parkSelect").value
+  if (selectedPark !== "") {
+    selectedPark = 1    
+  }
+})
+
+
 
 export const renderItinObject = () => {
   const saveTarget = document.querySelector(".saveButton")

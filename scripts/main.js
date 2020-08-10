@@ -9,6 +9,6 @@ import { render, renderItinObject } from "./SaveItineraryList.js";
 parkSelect()
 eateriesSelect();
 render()
-// renderItinObject()
+renderItinObject()
 
 
