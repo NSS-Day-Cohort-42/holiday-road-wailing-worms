@@ -12,7 +12,7 @@ eventHub.addEventListener('click', event => {
 
 export const eateryModal = (detailsObj) => {
   return `  
-<dialog  id="eateryDialog--${detailsObj.id}">
+<dialog class="dialog-background"  id="eateryDialog--${detailsObj.id}">
   <div>City: ${detailsObj.city}</div>
   <div>Wheelchair access:${detailsObj.ameneties.wheelchairAccessible}</div>
   <div>Pet Friendly:${detailsObj.ameneties.petFriendly}</div>

@@ -33,7 +33,7 @@ export const attractionSelect = () => {
 // This function is responsible for printing each item from the attractions array to the dropdown selector
 const render = (attractions) => {
     contentTarget.innerHTML += `
-    <h1>Attractions</h1>
+    <h1 class="attractionsHeader">Attractions</h1>
     <select class="dropdown dropdown--attraction" id="attractionSelect">
         <option value="0">Select an attraction...</option>
         ${
