@@ -2,6 +2,8 @@ import { saveTripHTML } from "./SaveIteneraryButton.js";
 import { useParks } from "../parks/ParkProvider.js";
 import { useEateries } from "../eateries/EateryProvider.js";
 import { useAttractions } from "../attractions/AttractionProvider.js";
+import { saveItin } from "./itineraryProvider.js";
+
 
 const eventHub = document.querySelector(".eventHub")
 const contentTarget = document.querySelector(".saveTripContainer")
@@ -13,32 +15,43 @@ let nameEntered =  1
 // Creating an event listener that listens for a click event.
 // The event we're listening for is on the saveItinerary button.
 eventHub.addEventListener("click", event => {
-  if (event.target.id === "saveItinerary") {
+  if (event.target.id === "saveItineraryButton") {
     // creating a variable to target the .value of a particular class on the DOM
     const selectedParkCode = document.querySelector("#parkSelect").value
     const selectedEateryId = document.querySelector("#eateries").value
     const selectedAttractionId = document.querySelector("#attractionSelect").value
+    const itinName = document.querySelector("#saveItineraryName").value
     
     const foundParkObject = useParks().find(
       (park) => {
         return selectedParkCode === park.parkCode
       })
-      console.log(foundParkObject)
+      console.log(foundParkObject.name)
       
     const foundEateryObject = useEateries().find(
       (eatery) => {
         return parseInt(selectedEateryId) === eatery.id
       })
-      console.log(foundEateryObject)
+      console.log(foundEateryObject.businessName)
 
     const foundAttractionObject = useAttractions().find(
       (attraction) => {
         return parseInt(selectedAttractionId) === attraction.id
       })
-      console.log(foundAttractionObject)
+      console.log(foundAttractionObject.name)
+
+    const foundItinName = itinName
+      console.log(foundItinName)
       
+    const newItinEntry = {
+      name: foundItinName,
+      location: foundParkObject.name,
+      attraction: foundAttractionObject.name,
+      eatery: foundEateryObject.businessName
+    }
+
     
-    
+    saveItin(newItinEntry)
   }
       
 })

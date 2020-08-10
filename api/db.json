@@ -1,11 +1,18 @@
 {
-	"itineraries": [
-		{
-			"id": "1",
-			"name": "Mike",
-			"location": "Nashville",
-			"attraction": "Park",
-			"eatery": "Burger King"
-		}
-	]
+  "itineraries": [
+    {
+      "id": 1,
+      "name": "Mike",
+      "location": "Nashville",
+      "attraction": "Park",
+      "eatery": "Burger King"
+    },
+    {
+      "name": "fred",
+      "location": "Cuyahoga Valley",
+      "attraction": "Cabazon Dinosaurs",
+      "eatery": "McClard's BBQ",
+      "id": 2
+    }
+  ]
 }
