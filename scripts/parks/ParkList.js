@@ -26,13 +26,13 @@ export const getParkDetailData = () => {
             return nationalParkCode === selectedPark.parkCode
         })        
         render(matchedPark)
-        showModalDialog()      
+         showModalDialog()      
     }
             
     
-export const render = parkDataObject => {
-             
+export const render = parkDataObject => {            
             contentTarget.innerHTML = `<dialog id="parkDetailDialog">${ ParkDetailTMLConverter(parkDataObject) }</dialog>`
         }
 
 
+        

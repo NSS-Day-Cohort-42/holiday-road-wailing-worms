@@ -17,3 +17,16 @@ body {
   margin: 5px;
   flex-direction: column;
 }
+
+.parkCard {
+  position: relative;
+  text-align: center;
+  color: rgb(46, 45, 45);
+}
+
+#parkName{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
