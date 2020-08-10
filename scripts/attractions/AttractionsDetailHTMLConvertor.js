@@ -7,6 +7,7 @@ export const attractionRender = (attractionObj) => {
             <h3>${ attractionObj.name }</h3>
             <div>${ attractionObj.city }, ${ attractionObj.state }</div>
             <div>${ attractionObj.description }</div>
+            <div class="details__button">
             <button class="attractionDetailButton" id="attraction-detail--${ attractionObj.id }">Details</button>
-    `
+            </div>   `  
 }

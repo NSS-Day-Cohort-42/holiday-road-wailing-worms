@@ -11,7 +11,6 @@
     justify-content: space-between;
 }
 
-
 .details__button{
    display: flex;
    flex-direction: row;
@@ -22,4 +21,12 @@
 .eateryHeader {
     display: flex;
     justify-content: center;
+}
+
+.eatery-Button {
+    font-family: Nunito;
+    color: #F0EBD8;
+    background-color: #BB3311;
+    border-radius: 18%;
+    font-weight: bolder;
 }
