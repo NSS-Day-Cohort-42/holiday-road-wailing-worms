@@ -13,6 +13,27 @@
       "attraction": "Cabazon Dinosaurs",
       "eatery": "McClard's BBQ",
       "id": 2
+    },
+    {
+      "name": "dave",
+      "location": "Carlsbad Caverns",
+      "attraction": "Snake World",
+      "eatery": "El Charro Cafe",
+      "id": 3
+    },
+    {
+      "name": "hello",
+      "location": "Black Canyon Of The Gunnison",
+      "attraction": "Elvis Memorial Chapel",
+      "eatery": "Club Paris",
+      "id": 4
+    },
+    {
+      "name": "kjh",
+      "location": "Canyonlands",
+      "attraction": "Snake World",
+      "eatery": "McClard's BBQ",
+      "id": 5
     }
   ]
 }

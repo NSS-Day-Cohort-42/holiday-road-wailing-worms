@@ -2,10 +2,10 @@ let itineraries = []
 
 const eventHub = document.querySelector(".eventHub")
 
-// const dispatchStateChangeEvent = () => {
-//   const itinStateChangeEvent = new CustomEvent("itinStateChanged")
-//   eventHub.dispatchStateChangeEvent(itinStateChangeEvent)
-// }
+const dispatchStateChangeEvent = () => {
+  const itinStateChangeEvent = new CustomEvent("itinStateChanged")
+  eventHub.dispatchStateChangeEvent(itinStateChangeEvent)
+}
 
 export const getItineraries = () => {
   return fetch ("http://localhost:7088/itineraries")
@@ -28,5 +28,5 @@ export const saveItin = (itinObj) => {
     body: JSON.stringify(itinObj)
   })
   .then(getItineraries)
-  // .then(dispatchStateChangeEvent)
+  .then(dispatchStateChangeEvent)
 }

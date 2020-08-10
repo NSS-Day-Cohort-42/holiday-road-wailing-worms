@@ -2,11 +2,13 @@ import { saveTripHTML } from "./SaveIteneraryButton.js";
 import { useParks } from "../parks/ParkProvider.js";
 import { useEateries } from "../eateries/EateryProvider.js";
 import { useAttractions } from "../attractions/AttractionProvider.js";
-import { saveItin } from "./itineraryProvider.js";
+import { saveItin, useItineraries } from "./itineraryProvider.js";
+import { itinHTMLObject } from "./ItineraryHTMLConverter.js";
 
 
 const eventHub = document.querySelector(".eventHub")
 const contentTarget = document.querySelector(".saveTripContainer")
+const itinTarget = document.querySelector(".mainContainer--Right")
 let selectedPark = 0
 let selectedEatery = 1
 let selectedAttraction = 1
@@ -22,6 +24,7 @@ eventHub.addEventListener("click", event => {
     const selectedAttractionId = document.querySelector("#attractionSelect").value
     const itinName = document.querySelector("#saveItineraryName").value
     
+
     const foundParkObject = useParks().find(
       (park) => {
         return selectedParkCode === park.parkCode
@@ -52,11 +55,27 @@ eventHub.addEventListener("click", event => {
 
     
     saveItin(newItinEntry)
+    
   }
       
 })
 
+eventHub.addEventListener("itinStateChanged", () => {
+  const newItins = useItineraries()
+  renderItineraries(newItins)
+})
 
+const renderItineraries = (itinArr) => {
+  let itinHTMLRep = ""
+    for (const itin of itinArr) {
+      itinHTMLRep += itinHTMLObject(itin)
+    }
+  itinTarget.innerHTML = `
+  <div class="importedItin">
+    ${itinHTMLRep}
+  </div>
+  `
+}
 
 
 // eventHub.addEventListener("parkSelected", () => {
