@@ -20,10 +20,10 @@ const eateryDetailEvent = new CustomEvent("eateryDetail", {
 export const eateriesToHtmlConverter = (eateryObj) => {
      return `
      <div class="">
-    <div class="name__Container">${eateryObj.businessName}</div>
+    <div class="name__Container"><h3>${eateryObj.businessName}</h3></div>
     <div> ${eateryObj.description}</div>
      <div class="details__button">
-     <button id="eateryDialog--${eateryObj.id}">details</button>
+     <button class="eatery-Button" id="eateryDialog--${eateryObj.id} ">details</button>
      </div>
     </div>`
 }
