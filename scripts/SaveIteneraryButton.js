@@ -1,0 +1,10 @@
+export const saveTripHTML = () => {
+  return `
+  <div>
+    <input type="text" placeholder="Enter your name" id="saveItinerary" class="enterName" ></input>
+  </div>
+  <div class="SaveButtonContainer" >
+    <button id="saveItinerary" class="saveButton" >Save Itinterary</button>
+  </div>
+  `
+}
