@@ -1,6 +1,6 @@
 const eventHub = document.querySelector('.eventHub')
 
-// 
+// click event that closes the modal when clicked
 eventHub.addEventListener('click', event => {
     if (event.target.id === 'close') {
         const dialog = event.target.parentNode
@@ -8,6 +8,7 @@ eventHub.addEventListener('click', event => {
     }
 })
 
+// HTML to be printed to the modal window when the details button is clicked
 export const attractionModal = (detailsObj) => {
     return `
     <dialog id="attractionDialog--${ detailsObj.id }">
