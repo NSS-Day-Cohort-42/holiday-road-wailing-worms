@@ -3,9 +3,12 @@ const eventHub = document.querySelector('.eventHub')
 eventHub.addEventListener('click', (clickEvent) => {
     if (clickEvent.target.id.startsWith("eateryDialog--") ) {
   const[prefix, eateryId] = clickEvent.target.id.split('--')     
+//   this splits the id name from the interpolated section which is the value of whatever restaurants the user selects.
+      // prefix = eateryDialog, eateryId = ${eateryObj.id}. [eateryDialog, eateryObj.id]
   const eateryDetailEvent = new CustomEvent("eateryDetail", {
       detail: {
           eateryId: eateryId
+        //   the value or id of what is selected
       }
   })
   
@@ -23,3 +26,4 @@ export const eateriesToHtmlConverter = (eateryObj) => {
      </div>
     </div>`
 }
+// ${eateryObj.id} stores the actual id from whatever object is selected

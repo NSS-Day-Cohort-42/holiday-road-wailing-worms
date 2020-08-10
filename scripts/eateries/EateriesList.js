@@ -21,8 +21,7 @@ eventHub.addEventListener('eaterySelected', (eaterySelectedEvent) => {
     
     })
 
-    // console.log(eateryThatWasSelected)
-    // console.log(foundEateryObject)
+    
     eateryRender(foundEateryObject);
 
 
@@ -33,7 +32,7 @@ eventHub.addEventListener('eaterySelected', (eaterySelectedEvent) => {
 eventHub.addEventListener('eateryDetail', (eateryButtonClicked) => {
     const eateryId = eateryButtonClicked.detail.eateryId 
     // eateryId is the id of whatever eatery that was selected from the dropDown.
-    // the button exists inside of the html coverter that is looped over and rendered inside of the select event
+    // the button exists inside of the html coverter that is looped over and rendered inside of the select event.
 
     // console.log(eateryId)
     const eaterDeets = useEateries()
@@ -44,7 +43,7 @@ eventHub.addEventListener('eateryDetail', (eateryButtonClicked) => {
     const dialog = document.querySelector(`#eateryDialog--${eateryId}`)
     dialog.showModal()
 });
-// this functions just like the above eventListener
+
 export const eateryDetailRender = (details) => {
 
     modalTarget.innerHTML = eateryModal(details)
