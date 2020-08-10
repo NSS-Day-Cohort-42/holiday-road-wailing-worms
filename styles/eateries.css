@@ -19,3 +19,7 @@
    margin-top: 15px;
     
 }
+.eateryHeader {
+    display: flex;
+    justify-content: center;
+}

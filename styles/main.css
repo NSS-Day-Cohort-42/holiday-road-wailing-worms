@@ -2,7 +2,6 @@
 @import "./middle.css";
 @import "./footer.css";
 @import "./weather.css";
-@import "./save.css";
 @import './eateries.css';
 
 
@@ -17,16 +16,7 @@ body {
   margin: 5px;
   flex-direction: column;
 }
-
-.parkCard {
-  position: relative;
-  text-align: center;
-  color: rgb(46, 45, 45);
-}
-
-#parkName{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.attractionsHeader{
+  display: flex;
+  justify-content: center;
 }
