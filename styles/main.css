@@ -48,11 +48,12 @@ body {
 
 .parkImage {
   opacity: 50%;
-  border-radius: 20%;
+  border-radius: 5%;
   z-index: 1;
 }
 
-#parkName{
+#parkName {
+  font-family: Nunito;
   position: absolute;
   top: 50%;
   left: 50%;
