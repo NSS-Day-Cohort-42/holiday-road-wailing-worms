@@ -19,3 +19,7 @@
   margin: .5rem;
   background-color: slategray;
 }
+
+.weatherHeading {
+  font-size: 1.5rem;
+}

@@ -19,7 +19,7 @@ export const getAllParkData = () => {
 
 // creates a copy of the parks array
 export const useParks = () => {
-    return parks.slice()
+    return parks.slice().sort()
 }
 
 const filterByDesignationProperty = (array, value) => {

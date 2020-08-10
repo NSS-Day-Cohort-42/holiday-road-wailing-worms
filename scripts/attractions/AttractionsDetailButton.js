@@ -1,5 +1,6 @@
 const eventHub = document.querySelector('.eventHub')
 
+// 
 eventHub.addEventListener('click', event => {
     if (event.target.id === 'close') {
         const dialog = event.target.parentNode
