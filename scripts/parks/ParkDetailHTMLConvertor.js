@@ -25,8 +25,10 @@ export const ParkDetailTMLConverter = (parkObject) => {
       .join("");
     parkOperatingHours += parkHoursInfo;
   }
+  
   let parkPhoneNumber = parkObject.contacts.phoneNumbers[0].phoneNumber
-  let formatPhoneNumber = (parkPhoneNumber) => {
+   
+  const formatPhoneNumber = (parkPhoneNumber) => {
     //Filter only numbers from the input
     let cleaned = ('' + parkPhoneNumber).replace(/\D/g, '');
     
@@ -40,7 +42,6 @@ export const ParkDetailTMLConverter = (parkObject) => {
     return null
   };
 
-  console.log(formatPhoneNumber)
   return `<section class="modalContainer--park">
 <h3><b>Address</b></h3>
 <div class= "park--addressLocation">${parkObject.addresses[0].line2}</div>
@@ -49,7 +50,7 @@ export const ParkDetailTMLConverter = (parkObject) => {
 <div class= "park--state">${parkObject.addresses[0].stateCode}</div>
 <div class= "park--latitude">${parkObject.latitude}</div>
 <div class= "park--longitude">${parkObject.longitude}</div>
-<div class= "park--phone">${parkObject.contacts.phoneNumbers[0].phoneNumber}</div>      
+<div class= "park--phone">${formatPhoneNumber(parkPhoneNumber)}</div>      
 <h3><b>Fees</b></h3>
 ${parkFees}
 <h3><b>Operating Hours</b></h3>

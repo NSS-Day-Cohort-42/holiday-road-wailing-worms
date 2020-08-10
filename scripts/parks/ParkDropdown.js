@@ -29,6 +29,7 @@ eventHub.addEventListener("change", changeEvent => {
 //Dropdown HTML Render
 const render = parksCollection => {
     contentTarget.innerHTML = `
+    <h1>National Parks</h1>
         <select class="dropdown" id="parkSelect">
             <option value="0">Please select a National Park...</option>
             ${
