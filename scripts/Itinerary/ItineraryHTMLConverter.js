@@ -5,5 +5,4 @@ export const itinHTMLObject = (itinObj) => {
   <div class ="tripAttraction">${itinObj.attraction}</div>
   <div class ="tripEatery">${itinObj.eatery}</div>
   `
-
   }
