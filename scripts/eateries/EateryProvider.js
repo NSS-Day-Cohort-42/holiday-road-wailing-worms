@@ -7,12 +7,9 @@ export const useEateries = () => {
 }
 
 
-export const getEateries =  () => {
-    return fetch('http://holidayroad.nss.team/eateries')
-            .then(response => response.json())
-            .then(parsedEateries => {
-                 eateries = parsedEateries
-                 
-            })
+export const getEateries =  async () => {
+    const response = await fetch('http://holidayroad.nss.team/eateries');
+    const parsedEateries = await response.json();
+    eateries = parsedEateries;
             
         }
