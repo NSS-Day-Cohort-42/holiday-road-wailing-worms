@@ -9,6 +9,7 @@ eventHub.addEventListener("change", (changeEvent) => {
     const eateryEvent = new CustomEvent("eaterySelected", {
         detail: {
             eateryId: changeEvent.target.value
+            // this actually gives you the value(the id) of what eatery is selected
         }
     })
 
@@ -24,6 +25,8 @@ export const eateriesRender = (eateriesCollection) => {
         }                                                       
     </select>`
 }
+// loops over the the eateries and returns the id of each option & displays the business names on the dom.
+
 
 export const eateriesSelect = () => {
     getEateries().then(() => {
