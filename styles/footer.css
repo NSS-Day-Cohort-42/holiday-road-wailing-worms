@@ -1,18 +1,15 @@
 .footerContainer {
   display: flex;
   flex: 4;
-  /* border: 2px solid black; */
   margin: 5px;
 }
 
 .weatherContainer {
-  border: 2px solid black;
   flex: 2;
   margin: 5px;
 }
 
 .saveTripContainer {
-  border: 2px solid black;
   flex: 1;
   margin: 5px;
 }

@@ -13,9 +13,9 @@ export const weatherHTMLRep = (weatherObj) => {
   return`
   <div class="weatherContainerOutput">
     <div>${days[new Date((weatherObj.dt*1000)).getDay()]}</div>
-    <div>Avg. Temp:</div>
+    <div>Avg:</div>
     <div>${kelvinConvert}&degF</div>
-    <div>${weatherObj.weather[0].main}</div>
+    <img src="http://openweathermap.org/img/wn/${weatherObj.weather[0].icon}@2x.png"></img>
   </div>
   `
 }
