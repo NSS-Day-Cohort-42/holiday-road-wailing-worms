@@ -8,8 +8,8 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  overflow: scroll;
-  /* font-size: 1vw; */
+  overflow: auto;
+
 }
 
 .enterName {
@@ -23,6 +23,7 @@
 .savedHeading {
   font-size: 2rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .itinCard {
@@ -31,5 +32,6 @@
   background-color: #F0EBD8;
   text-align: center;
   padding: 2px;
-  margin: 2px 10px;
+  margin: 1rem 3rem;
+  border-radius: .5rem;
 }
