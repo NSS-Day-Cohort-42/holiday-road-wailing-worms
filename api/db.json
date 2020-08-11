@@ -6,41 +6,6 @@
       "attraction": "Elvis Memorial Chapel",
       "eatery": "Club Paris",
       "id": 1
-    },
-    {
-      "name": "gerry",
-      "location": "Black Canyon Of The Gunnison",
-      "attraction": "1950s Gas Station With Dummies",
-      "eatery": "Joe's Stone Crab",
-      "id": 2
-    },
-    {
-      "name": "",
-      "location": "Black Canyon Of The Gunnison",
-      "attraction": "UFO Crashed Here",
-      "eatery": "Joe's Stone Crab",
-      "id": 3
-    },
-    {
-      "name": "",
-      "location": "Rocky Mountain",
-      "attraction": "UFO Crashed Here",
-      "eatery": "Matt's Bar",
-      "id": 4
-    },
-    {
-      "name": "",
-      "location": "Carlsbad Caverns",
-      "attraction": "Avery’s Beverages",
-      "eatery": "H&H Soul Food",
-      "id": 5
-    },
-    {
-      "name": "",
-      "location": "Everglades",
-      "attraction": "1950s Gas Station With Dummies",
-      "eatery": "Mayflower Cafe",
-      "id": 6
     }
   ]
 }
