@@ -10,7 +10,7 @@ export const ParkDetailTMLConverter = (parkObject) => {
   if (parkObject.entranceFees.length > 0) {
     const parkFeesInfo = parkObject.entranceFees
       .map((fee) => {
-        return `<div> ${fee.title}</div> <div>$${Math.round(fee.cost)}</div>`;
+        return `<div><b>${fee.title}:</b> $${Math.round(fee.cost)}</div>`;
       })
       .join("");
     parkFees += parkFeesInfo;
