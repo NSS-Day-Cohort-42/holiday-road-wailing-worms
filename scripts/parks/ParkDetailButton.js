@@ -43,7 +43,7 @@ export const getParkCard = () => {
         showParkCard(matchedPark)    
         ShowParkDetailsButton()
     }
-  
+    
  /* This function takes in a single JSON object from the parks array and then checks if it's image property is greater than zero. Essentially, ensuring data is there to work with.
  Next we store the number of images that are in the images array in a variable. To create variety, a variable is created that randomly selects a number that is between 0 and the n-1 numbers of images in the images property.
  lastly, values of the URL and it's alt text are interpolated into an HTML img tag. To handle if there are no images, a locally stored version of the NPS logo will be displayed. */   
@@ -53,10 +53,8 @@ export const getParkCard = () => {
         let randomImageSelector = Math.floor(Math.random() * (numberOfImagesInAPI))
         contentTarget.innerHTML = 
         `<div id="parkName">${ selectedParkObject.fullName }</div>
-        <img class="parkImage" src="${selectedParkObject.images[randomImageSelector].url}" alt="${selectedParkObject.images[randomImageSelector].altText}" width= 300px height= 300px SameSite=None; Secure> `
-        } else {
-            contentTarget.innerHTML = 
-        `<div class="parkName">${ selectedParkObject.fullName }</div>
-        <img src="./images/512px-US-NationalParkService-Logo.svg.png" alt="National Park Service Logo" width= 300px height= 300px SameSite=None; Secure> `
-        }
+        <img class="parkImage" src="${selectedParkObject.images[randomImageSelector].url}" alt="${selectedParkObject.images[randomImageSelector].altText}" width= 300px height= 300px>`
+        } 
     }
+
+    //`<img src="./images/512px-US-NationalParkService-Logo.svg.png" alt="National Park Service Logo" width=300px height= 300px SameSite=None; Secure>`
