@@ -53,8 +53,6 @@ export const getParkCard = () => {
         let randomImageSelector = Math.floor(Math.random() * (numberOfImagesInAPI))
         contentTarget.innerHTML = 
         `<div id="parkName">${ selectedParkObject.fullName }</div>
-        <img class="parkImage" src="${selectedParkObject.images[randomImageSelector].url}" alt="${selectedParkObject.images[randomImageSelector].altText}" width= 300px height= 300px>`
+        <img class="parkImage" src="${selectedParkObject.images[randomImageSelector].url}" alt="${selectedParkObject.images[randomImageSelector].altText}" onerror="this.onerror=null;this.src='./images/512px-US-NationalParkService-Logo.svg.png';" width= 300px height= 300px>`
         } 
     }
-
-    //`<img src="./images/512px-US-NationalParkService-Logo.svg.png" alt="National Park Service Logo" width=300px height= 300px SameSite=None; Secure>`
