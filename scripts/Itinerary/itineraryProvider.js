@@ -4,7 +4,7 @@ const eventHub = document.querySelector(".eventHub")
 
 const dispatchStateChangeEvent = () => {
   const itinStateChangeEvent = new CustomEvent("itinStateChanged")
-  eventHub.dispatchStateChangeEvent(itinStateChangeEvent)
+  eventHub.dispatchEvent(itinStateChangeEvent)
 }
 
 export const getItineraries = () => {

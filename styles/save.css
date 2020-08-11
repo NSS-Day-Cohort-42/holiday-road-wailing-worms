@@ -1,8 +1,14 @@
+.mainContainer--Right {
+  height: 500px;
+  overflow: scroll;
+}
+
 .saveTripContainer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  overflow: scroll;
   /* font-size: 1vw; */
 }
 
@@ -12,4 +18,18 @@
 
 .saveButton {
   font-size: 100%;
+}
+
+.savedHeading {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.itinCard {
+  justify-content: center;
+  border: black solid 2px;
+  background-color: #F0EBD8;
+  text-align: center;
+  padding: 2px;
+  margin: 2px 10px;
 }

@@ -24,86 +24,73 @@ eventHub.addEventListener("click", event => {
     const selectedAttractionId = document.querySelector("#attractionSelect").value
     const itinName = document.querySelector("#saveItineraryName").value
     
-
+    
     const foundParkObject = useParks().find(
       (park) => {
         return selectedParkCode === park.parkCode
       })
-      console.log(foundParkObject.name)
       
-    const foundEateryObject = useEateries().find(
-      (eatery) => {
-        return parseInt(selectedEateryId) === eatery.id
+      
+      const foundEateryObject = useEateries().find(
+        (eatery) => {
+          return parseInt(selectedEateryId) === eatery.id
+        })
+        
+        
+        const foundAttractionObject = useAttractions().find(
+          (attraction) => {
+            return parseInt(selectedAttractionId) === attraction.id
+          })
+          
+          
+          const foundItinName = itinName
+          
+          
+          const newItinEntry = {
+            name: foundItinName,
+            location: foundParkObject.name,
+            attraction: foundAttractionObject.name,
+            eatery: foundEateryObject.businessName
+          }
+          
+          
+          saveItin(newItinEntry)
+          clearEntry()
+          
+          
+        }
+        
       })
-      console.log(foundEateryObject.businessName)
-
-    const foundAttractionObject = useAttractions().find(
-      (attraction) => {
-        return parseInt(selectedAttractionId) === attraction.id
+      
+      eventHub.addEventListener("itinStateChanged", () => {
+        const newItins = useItineraries()
+        renderItineraries(newItins)
       })
-      console.log(foundAttractionObject.name)
-
-    const foundItinName = itinName
-      console.log(foundItinName)
       
-    const newItinEntry = {
-      name: foundItinName,
-      location: foundParkObject.name,
-      attraction: foundAttractionObject.name,
-      eatery: foundEateryObject.businessName
-    }
-
-    
-    saveItin(newItinEntry)
-    
-  }
-      
-})
-
-eventHub.addEventListener("itinStateChanged", () => {
-  const newItins = useItineraries()
-  renderItineraries(newItins)
-})
-
-const renderItineraries = (itinArr) => {
-  let itinHTMLRep = ""
-    for (const itin of itinArr) {
-      itinHTMLRep += itinHTMLObject(itin)
-    }
-  itinTarget.innerHTML = `
+      export const renderItineraries = (itinArr) => {
+        let itinHTMLRep = ""
+        for (const itin of itinArr) {
+          itinHTMLRep += itinHTMLObject(itin)
+        }
+        itinTarget.innerHTML = `
+  <div class="savedHeading">Saved Trips</div>
   <div class="importedItin">
     ${itinHTMLRep}
   </div>
   `
 }
 
+const clearEntry = () => {
+  document.querySelector("#saveItineraryName").value = ""
 
-// eventHub.addEventListener("parkSelected", () => {
-//   const saveTarget = document.querySelector(".saveButton")
-//   console.log(`PreValue${selectedPark}`)
-//   if (selectedParkValue !== "") {
-//     selectedPark = 1    
-//   }
-//   console.log(`PostValue${selectedPark}`)
-  
-//   if (selectedPark === 1 && selectedEatery === 1 && selectedAttraction === 1 && nameEntered === 1 ) {
-//     console.log("WORKING")
-//     saveTarget.disabled = false
-//   } else {
-//     console.log("NOT WORKING")
-//     saveTarget.disabled = true
-//   }
-  
-// })
+}
 
-
-
-
-
-export const render = () => {
+export const initialRender = () => {
+  const printItins = useItineraries()
   let stringToPrint = ""
 
   stringToPrint = saveTripHTML()
 
   contentTarget.innerHTML = stringToPrint
+
 }
