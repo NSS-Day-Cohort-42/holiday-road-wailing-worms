@@ -1,3 +1,11 @@
 {
-	"itineraries": []
+  "itineraries": [
+    {
+      "name": "Michael",
+      "location": "Badlands",
+      "attraction": "Elvis Memorial Chapel",
+      "eatery": "Club Paris",
+      "id": 1
+    }
+  ]
 }
