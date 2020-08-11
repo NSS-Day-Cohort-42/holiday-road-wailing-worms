@@ -31,7 +31,7 @@ export const getParkDetailData = () => {
             
     
 export const render = parkDataObject => {            
-            contentTarget.innerHTML = `<dialog id="parkDetailDialog">${ ParkDetailTMLConverter(parkDataObject) }</dialog>`
+            contentTarget.innerHTML = `<dialog id="parkDetailDialog">${ ParkDetailTMLConverter(parkDataObject) }<button id="close">exit</button></dialog>`
         }
 
 

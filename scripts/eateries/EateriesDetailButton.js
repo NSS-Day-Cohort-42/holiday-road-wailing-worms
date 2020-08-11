@@ -11,13 +11,17 @@ eventHub.addEventListener('click', event => {
 
 
 export const eateryModal = (detailsObj) => {
+  function isAmenityAvailable(detailsProperty) {
+    return (detailsProperty ? "✅" : "❌");
+  }
+
   return `  
 <dialog class="dialog-background"  id="eateryDialog--${detailsObj.id}">
   <div>City: ${detailsObj.city}</div>
-  <div>Wheelchair access:${detailsObj.ameneties.wheelchairAccessible}</div>
-  <div>Pet Friendly:${detailsObj.ameneties.petFriendly}</div>
-  <div>wifi:${detailsObj.ameneties.wifi}</div>
-  <div>restrooms:${detailsObj.ameneties.restrooms}</div>
+  <div>Wheelchair access: ${isAmenityAvailable(detailsObj.ameneties.wheelchairAccessible)}</div>
+  <div>Pet Friendly: ${isAmenityAvailable(detailsObj.ameneties.petFriendly)}</div>
+  <div>wifi: ${isAmenityAvailable(detailsObj.ameneties.wifi)}</div>
+  <div>restrooms: ${isAmenityAvailable(detailsObj.ameneties.restrooms)}</div>
   <button id="close">exit</button>
 </dialog>`
 }
