@@ -5,6 +5,7 @@
 @import "./weather.css";
 @import "./save.css";
 @import './eateries.css';
+@import "./parks.css";
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Nunito;
@@ -50,36 +51,6 @@ body {
   background-color: #F0EBD8;
 }
 
-.parkDropdown {
-  text-align: center;
-}
-
-.parkCard {
-  position: relative;
-  text-align: center;
-  color: #0D1321;
-  margin: 2px;
-  flex-flow: column wrap;
-}
-
-.parkImage {
-  opacity: 50%;
-  border-radius: 5%;
-  z-index: 1;
-}
-
-#parkName {
-  font-family: Nunito;
-  font-weight: 900;
-  background-color: rgba(240, 235, 216, .1);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-
 dialog {
   width: 600px;
   max-width: 100%;
@@ -104,10 +75,3 @@ dialog .actions {
   justify-content: space-around;
 }
 
-#showParkDetails {
-  font-family: Nunito;
-  color: #F0EBD8;
-  background-color: #BB3311;
-  border-radius: .5em;
-  font-weight: bolder;
-}
