@@ -3,6 +3,7 @@
 @import "./footer.css";
 @import "./weather.css";
 @import './eateries.css';
+@import "./save.css";
 
 
 body {
@@ -28,3 +29,4 @@ body {
   font-weight: bolder;
   
 }
+
