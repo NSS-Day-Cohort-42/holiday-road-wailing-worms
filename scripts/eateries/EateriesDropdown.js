@@ -19,7 +19,7 @@ eventHub.addEventListener("change", (changeEvent) => {
 
 export const eateriesRender = (eateriesCollection) => {
     contentTarget.innerHTML = `<h1 class="eateryHeader">Choose an eatery</h1>
-    <select id="eateries">
+    <select class="dropdown" id="eateries">
     <option value="0"> select an eatery...</option>
     
     ${                                          
